@@ -2,7 +2,7 @@
 
 FeedHound tracks down an RSS feed for a given domain.
 
-First it checks for RSS links in the header. If there aren't any, its uses conventional hints from <a> tags (blog.domain.com and domain.com/blog) and follows links to find the blog. Finally, it opens the feed url and confirm that its in a format we (Feedzirra more specifically) can read.
+First it checks for RSS links in the header. If there aren't any, its uses conventional hints from a tags (blog.domain.com and domain.com/blog) and follows links to find the blog. Finally, it opens the feed url and confirm that its in a format we (Feedzirra more specifically) can read.
 
 ## Installation
 
