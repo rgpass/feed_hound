@@ -21,7 +21,7 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
-> FeedHound.hunt(domain: "salesloft.com", debug: true)
+> FeedHound.hunt(domain: "listrak.com", debug_level: 1)
 DEBUG hunt depth 0: http://listrak.com
 DEBUG  - redirect to http://www.listrak.com/
 DEBUG hunt depth 1: http://www.listrak.com/
