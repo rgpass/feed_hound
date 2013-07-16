@@ -25,12 +25,13 @@ Or install it yourself as:
 DEBUG hunt depth 0: http://listrak.com
 DEBUG  - redirect to http://www.listrak.com/
 DEBUG hunt depth 1: http://www.listrak.com/
-DEBUG  - blog_links: ["http://blog.listrak.com/", "http://blog.listrak.com/"]
+DEBUG  - blog related links: ["http://blog.listrak.com/"]
+DEBUG  - blog related links: ["http://blog.listrak.com/"]
 DEBUG hunt depth 2: http://blog.listrak.com/
-DEBUG  - found reference to rss
+DEBUG  - found reference to RSS in header
 DEBUG hunt depth 3: http://blog.listrak.com/rss
 DEBUG  - found RSS
-=> "http://feeds.feedburner.com/salesloft"
+=> "http://blog.listrak.com/rss"
 ```
 
 ## Contributing

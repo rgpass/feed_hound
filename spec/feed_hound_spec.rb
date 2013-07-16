@@ -1,7 +1,7 @@
 require "spec_helper"
-require_relative "../lib/feed_hound"
+require "feed_hound"
 
-FeedHound::DEBUG_LEVEL = 1
+FeedHound::default_debug_level = 1
 
 describe FeedHound do
   it "returns the first rss feed on a page if it exists", vcr: { cassette_name: "feed_hound-salesloft.com" } do
