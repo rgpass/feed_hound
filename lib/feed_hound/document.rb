@@ -21,7 +21,7 @@ module FeedHound
 
     def is_rss?
       feed = Feedzirra::Feed.fetch_and_parse(url)
-      feed != nil || feed == 0
+      Feedzirra::Feed.feed_classes.include?(feed.class)
     end
 
     def doc

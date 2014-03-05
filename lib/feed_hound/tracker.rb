@@ -2,11 +2,12 @@ module FeedHound
   class Tracker
     MAX_HUNT_DEPTH = 4
 
-    attr_reader :domain, :debug_level
+    attr_reader :domain, :debug_level, :strict
 
     def initialize(options)
       @domain = options.fetch(:domain)
       @debug_level = options.fetch(:debug_level, FeedHound::default_debug_level)
+      @strict = options.fetch(:strict, false)
       @depth = 0
       @visited_urls = []
     end
@@ -31,7 +32,7 @@ module FeedHound
       @depth += 1
       if @depth > MAX_HUNT_DEPTH
         puts "DEBUG MAX_HUNT_DEPTH (#{MAX_HUNT_DEPTH}) exceeded" if debug_level >= 1
-        return nil
+        return resolution(doc)
       end
 
       if doc.redirect?
@@ -45,7 +46,11 @@ module FeedHound
       end
 
       puts "DEBUG search exhausted. Stopping." if debug_level >= 1
-      return nil
+      return resolution(doc)
+    end
+
+    def resolution(doc)
+      doc.url if strict?
     end
 
     def first_unvisited(urls)
@@ -56,6 +61,10 @@ module FeedHound
 
       @visited_urls << url unless url.nil?
       url
+    end
+
+    def strict?
+      @strict
     end
   end
 end

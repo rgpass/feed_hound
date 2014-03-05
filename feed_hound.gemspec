@@ -21,6 +21,7 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency "webmock"
   gem.add_development_dependency "vcr"
   gem.add_development_dependency "geminabox"
+  gem.add_development_dependency "pry"
   gem.add_runtime_dependency "faraday"
   gem.add_runtime_dependency "nokogiri"
   gem.add_runtime_dependency "feedzirra"
